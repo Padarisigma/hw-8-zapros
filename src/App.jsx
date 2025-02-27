@@ -223,7 +223,7 @@ setTaskNumber(id)
       <Modal open={openShowModal} onCancel={() => setShowModal(false)} footer={null}>
   <p>Name: {dataId.name}</p>
   <p>Desc: {dataId.description}</p>
-  <div className='grid grid-cols-4 gap-[20px] py-[20px]'>
+  <div className='grid grid-cols-3 gap-[20px] py-[20px]'>
   {dataId.images && Array.isArray(dataId.images) && dataId.images.map((e) => (
     <img key={e.id} src={'https://to-dos-api.softclub.tj/images/' + e.imageName} alt="" className="w-[100px] h-[100px] rounded-[50%]" />
   ))}
