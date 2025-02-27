@@ -230,10 +230,10 @@ setTaskNumber(id)
   </div>
   
 </Modal>
-         <div className='grid grid-cols-4 w-[90%] gap-[30px] m-auto'>
+         <div className='grid  pb-[50px] sm:grid-cols-4 w-[90%] gap-[30px] m-auto'>
           {
           data.map((el)=>{
-            return <div key={el.id} className='flex border-1 border-solid  p-[20px] rounded-[10px] flex-col gap-[10px] '>
+            return <div key={el.id} className='flex dark:shadow-2xl dark:border-1 border-1 border-solid  p-[20px] rounded-[10px] flex-col gap-[10px] '>
             <p className='text-[20px] font-semibold italic tracking-[2px] overflow-hidden w-[100%]'>{el.name}</p>
             <p className='text-[18px] italic tracking-[1px]'>{el.description}</p>
             <div className='grid grid-cols-3'>
@@ -241,7 +241,7 @@ setTaskNumber(id)
               return <div>
                 <div className='flex flex-col items-center gap-[10px]'>
                   <img key={e.id} src={'https://to-dos-api.softclub.tj/images/' + e.imageName} alt="" className='w-[70px] h-[70px] rounded-[50%]' /> 
-                <button className='' onClick={()=> deleteImg(e.id)}> <DeleteIcon /></button>
+                <button className='hover:bg-gray-300 dark:hover:bg-gray-800 p-[7px] rounded-[50%]' onClick={()=> deleteImg(e.id)} > <DeleteIcon /></button>
                 </div>
                 
                 </div> 
@@ -249,10 +249,10 @@ setTaskNumber(id)
             })}
             </div>
             
-            <button onClick={()=> deleteUser(el.id)} className='py-[7px] px-[20px] border-1 border-solid border-[lightgray] bg-transparent rounded-[5px]'>Delete</button>
-            <button onClick={()=> put(el)} className='py-[7px] px-[20px] border-1 border-solid border-[lightgray] bg-transparent rounded-[5px]'>Edit</button>
-            <button onClick={()=> getById(el.id)} className='py-[7px] px-[20px] border-1 border-solid border-[lightgray] bg-transparent rounded-[5px]'>Show</button>
-            <button onClick={()=>img(el.id)} className='py-[7px] px-[20px] border-1 border-solid border-[lightgray] bg-transparent rounded-[5px]'>Add image</button>
+            <button onClick={()=> deleteUser(el.id)} className='py-[7px] px-[20px] dark:hover:border-[white] dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:text-white border-1 hover:bg-gray-200 hover:text-gray-950 border-solid border-gray-900 bg-transparent rounded-[5px]'>Delete</button>
+            <button onClick={()=> put(el)} className='py-[7px] px-[20px] border-1 dark:hover:border-[white] dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:text-white border-solid  hover:bg-gray-200 hover:text-gray-950  border-gray-900 bg-transparent rounded-[5px]'>Edit</button>
+            <button onClick={()=> getById(el.id)} className='py-[7px] px-[20px] border-1 dark:hover:border-[white] dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:text-white hover:bg-gray-200 hover:text-gray-950 border-solid border-gray-900 bg-transparent rounded-[5px]'>Show</button>
+            <button onClick={()=>img(el.id)} className='py-[7px] px-[20px] border-1 border-solid dark:hover:border-[white] dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:text-white hover:bg-gray-200 hover:text-gray-950 border-gray-900 bg-transparent rounded-[5px]'>Add image</button>
             <Checkbox  checked={el.isCompleted} onChange={()=>handleCheckboxChange(el.id, el.isCompleted)} style={{color: el.isCompleted ? 'green': 'red'}}>{el.isCompleted ? 'Done': 'Not Done'}</Checkbox>
             </div>
           })
